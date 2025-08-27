@@ -42,7 +42,7 @@ const Hero = () => {
             end: "bottom top",
             scrub: true
         }  })
-        .to(".right-leaf", { y: 200}, 0)
+        .to(".right-leaf", { y: 200, rotation: -20}, 0)
 
         .to(".arrow", { y: 100 }, 0);
         

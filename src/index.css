@@ -56,22 +56,14 @@ body {
    width: 30px;   /* ancho más chico */
   height: auto;   /* mantiene la proporción */
 }
-#trapoa {
-   width: 350px;   /* ancho más chico */
-  height: auto;   /* mantiene la proporción */
-  margin-left: -210px;
-  margin-top: 20px;
-  transform: rotate(25deg);   /* gira 15 grados en sentido horario */
-  transform-origin: center;   /* punto de pivote (por defecto: center) */
 
-}
 
 #trapob {
    width: 350px;   /* ancho más chico */
   height: auto;   /* mantiene la proporción */
   margin-right: -210px;
-  /*margin-top: 20px;*/
-  transform: rotate(5deg);   /* gira 15 grados en sentido horario */
+  margin-top: 140px;
+  transform: rotate(15deg);   /* gira 15 grados en sentido horario */
   transform-origin: center;   /* punto de pivote (por defecto: center) */
 
 }
