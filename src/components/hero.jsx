@@ -1,11 +1,14 @@
 import { useGSAP } from "@gsap/react";
-import React from "react"
 import { gsap } from "gsap";
 import { SplitText } from "gsap/all";
+import {useRef} from "react"
 
 
 const Hero = () => {
 
+    const videoRef  = useRef();
+
+    
 
     useGSAP(() => {
        
@@ -40,9 +43,28 @@ const Hero = () => {
             scrub: true
         }  })
         .to(".right-leaf", { y: 200}, 0)
-        .to(".left-leaf", { y: -200}, 0)
+
+        .to(".arrow", { y: 100 }, 0);
         
         
+          // Animate video currentTime from 0 to duration on scroll
+        if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+            videoRef.current.onloadedmetadata = () => {
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: "#hero",
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: true,
+                        pin: false,
+                    },
+                }).to(videoRef.current, {
+                    currentTime: videoRef.current.duration,
+                    ease: "none",
+                });
+            };
+        }
 
     }, []  );
 
@@ -50,17 +72,20 @@ const Hero = () => {
 
 
     return (
+        <>
         <section id = "hero" className="noisy">
                 <h1 className="title" id = "hero-text">
                     BADU CLEANING
                     </h1>
 
 
-                <img src="/images/hero-left-leaf.png" id ="trapoa" alt="left-leaf" className="left-leaf"/> 
+                
                 <img src="/images/hero-right-leaf.png" id="trapob" alt="right-leaf" className="right-leaf"/>    
    
 
         <div className="body">
+
+            <img src="/images/arrow.png" alt="arrow" className="arrow" /> 
              <div className="content">
 
                 <div id="texto1" className="space-y-5 hidden md:block">
@@ -84,6 +109,22 @@ const Hero = () => {
 
         </div>
         </section>
+
+        <div className="video absolute inset-0">
+
+            <video 
+            src="/videos/output.mp4" 
+             ref = {videoRef} 
+             muted
+              playsInline 
+              preload ="auto" 
+              loop
+              />
+            
+
+        </div>
+        
+    </>
             
     );
 }   
