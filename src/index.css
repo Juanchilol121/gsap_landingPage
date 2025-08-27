@@ -52,6 +52,53 @@ body {
     );
 }
 
+#imagenjuanchi {
+   width: 30px;   /* ancho más chico */
+  height: auto;   /* mantiene la proporción */
+}
+#trapoa {
+   width: 350px;   /* ancho más chico */
+  height: auto;   /* mantiene la proporción */
+  margin-left: -210px;
+  margin-top: 20px;
+  transform: rotate(25deg);   /* gira 15 grados en sentido horario */
+  transform-origin: center;   /* punto de pivote (por defecto: center) */
+
+}
+
+#trapob {
+   width: 350px;   /* ancho más chico */
+  height: auto;   /* mantiene la proporción */
+  margin-right: -210px;
+  /*margin-top: 20px;*/
+  transform: rotate(5deg);   /* gira 15 grados en sentido horario */
+  transform-origin: center;   /* punto de pivote (por defecto: center) */
+
+}
+ 
+#caree
+{
+  text-align: center;
+}
+
+ 
+#texto1
+{
+  margin-left: 40px;
+}
+
+ 
+#texto2
+{
+  margin-right: 40px;
+}
+
+#hero-text {
+    font-size: 180px; 
+    
+    /* tamaño de fuente más grande */
+}
+
 @utility masked-img {
     mask-image: url("/images/mask-img.png");
     mask-repeat: no-repeat;
